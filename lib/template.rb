@@ -34,7 +34,7 @@ class Template
   end
 
   def sub_salutation
-    if @salutation.length > 0
+    if !@salutation.nil? && @salutation.length > 0
       @salutation.gsub!("@first_name", @first_name)
       @salutation.gsub!("@last_name", @last_name)
     else
