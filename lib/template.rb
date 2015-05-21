@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 class Template
+  attr_accessor :first_name, :last_name, :salutation, :product, :address
+
   def email_template
     File.dirname(File.absolute_path(__FILE__)) + '/body.txt'
   end
@@ -40,8 +42,8 @@ class Template
     end
   end
 
-  def print_template
+  def render_template
     email_body = load
-    puts eval(email_body)
+    eval(email_body)
   end
 end
