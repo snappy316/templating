@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-class Templating
+class Template
   def email_template
     File.dirname(File.absolute_path(__FILE__)) + '/body.txt'
   end
@@ -26,6 +26,7 @@ class Templating
     @first_name = get_required_value("What is the customer's first name?")
     @last_name = get_value("What is the customer's last name?")
     @salutation = get_value("What should the salutation be? (Use '@first_name' and '@last_name')")
+    sub_salutation
     @product = get_required_value("What product is the customer interested in?")
     @address = "1 Infinite Loop\nSomewheresville, CA 98765"
   end
