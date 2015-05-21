@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'yaml'
 
 print "What is the customer's first name? - "
 first_name = gets.chomp
@@ -19,12 +20,14 @@ address = "1 Infinite Loop\nSomewheresville, CA 98765"
 salutation.gsub!("@first_name", first_name)
 salutation.gsub!("@last_name", last_name)
 
-email_body = "\n\n" + address + "\n\n" +
-  salutation + ", \n\n" +
-  "Thank you for your interest in " + product + "s.\n" +
-  "Unfortunately, we sold our last " + product + " yesterday.\n\n" +
-  first_name + ", if you have any more questions about our products,\n" +
-  "email us at support@horcrux.com, tweet to @horcrux_support,\n" +
-  "or call us @ 1-800-HORCRUX.\n\n"
+def database
+  File.dirname(File.absolute_path(__FILE__)) + '/body.txt'
+end
 
-puts email_body
+def load
+  read_file = File.read(database)
+end
+
+email_body = load
+
+puts eval(email_body)
