@@ -1,7 +1,7 @@
-"\n\n#{address}\n\n" +
-"#{salutation},\n\n" +
-"Thank you for your interest in #{product}s.\n" +
-"Unfortunately, we sold our last #{product} yesterday.\n\n" +
-"#{first_name}, if you have any more questions about our products,\n" +
+"\n\n#{@address}\n\n" +
+"#{@salutation},\n\n" +
+"Thank you for your interest in #{@product}s.\n" +
+"Unfortunately, we sold our last #{@product} yesterday.\n\n" +
+"#{@first_name}, if you have any more questions about our products,\n" +
 "email us at support@horcrux.com, tweet to @horcrux_support,\n" +
 "or call us @ 1-800-HORCRUX.\n\n"
